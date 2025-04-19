@@ -1,0 +1,81 @@
+
+
+  body {
+    font-family: 'Urbanist', sans-serif;
+    background-color:#f0f0f0;
+    padding: 20px;
+  }
+  
+  
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #5c715e;
+  }
+  
+  .ajout form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .ajout input[type="texte"] {
+    flex: 1;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .ajout button {
+    background-color: #5c715e;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .liste_contenu {
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #b6cdbd;
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+  }
+  
+  .cocher {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+  }
+  
+  .todo-item.completed{
+    text-decoration: line-through;
+    color: #777;
+  }
+  
+  .button_delete {
+    background-color: #5c715e;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Modifier la tâche</title>
+</head>
+<body>
+    <h1>Modifier la tâche</h1>
+    <form action="/modifier/{{ tache['id'] }}" method="POST">
+        <label>Titre :</label>
+        <input type="text" name="tache" value="{{ tache['tache'] }}" required><br>
+
+        <label>Description :</label>
+        <textarea name="description" required>{{ tache['description'] }}</textarea><br>
+
+        <button type="submit">Enregistrer</button>
+    </form>
+</body>
+</html>

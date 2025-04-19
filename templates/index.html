@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gurmukhi:wght@100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="liste_contenu">
+        <h1>Ma ToDo List</h1>
+        <div class="ajout">
+            <form action="/update" method="POST">
+                <input type="texte" name="tache" placeholder="Ajouter une tâche..." required>
+                <input type="texte" name="description" placeholder="Ajouter une description..." required>
+                <button type="submit">Ajouter</button>
+            </form>
+        </div>
+        <ul>
+            <div class="coter_g">
+                {% for item in todo %}
+                <li class="todo-item {% if item[4] %}completed{% endif %}">
+                    <form action="{{ url_for('cocher', todo_id=item['id']) }}" method="POST" class="cocher">
+                    <input type="checkbox" onchange="this.form.submit()" {% if item[4] %}checked{% endif %}>
+                    <strong>{{ item[1] }}</strong> <br>
+                    <small>{{ item[2] }}</small>
+                </form>
+                <a href="/delete/{{ item[0] }}">
+                    <button class="button_delete">Supprimer</button>
+                </a>
+            </li>
+            {% endfor %}
+            </div>
+        </ul>
+    </div>
+</body>
+</html>
